@@ -1,3 +1,6 @@
+
+
+
 #!/usr/bin/python3
 from PIL import Image
 
@@ -10,7 +13,7 @@ from os.path import isfile, join
 print("isfile imported\n")
 import datetime
 
-INPUTPATH = f"{environ['APPDATA']}/PrismLauncher/instances/1.20.1/.minecraft/journeymap/data/mp/146~56~112~60~19132/overworld/day/"
+INPUTPATH = f"{environ['APPDATA']}\\PrismLauncher\\instances\\1.12.2\\.minecraft\\journeymap\\data\\mp\\146~56~112~60\\DIM0\\day\\"
 print("input path set: {}\n".format(INPUTPATH))
 
 filelist = [f for f in listdir(INPUTPATH) if isfile(join(INPUTPATH, f))]
