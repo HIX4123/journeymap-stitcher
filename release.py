@@ -13,14 +13,26 @@ from os.path import isfile, join
 print("isfile imported\n")
 import datetime
 
+print("datetime imported\n")
+
 root = tkinter.Tk()
+print("root created")
+
 root.withdraw()
-input_path = filedialog.askdirectory(
-    parent=root,
-    initialdir=f"{environ['APPDATA']}\\.minecraft\\journeymap\\data\\mp\\",
-    title="맵 타일이 포함된 폴더를 선택하세요.",
+print("root hidden\n")
+
+print("selecting input path")
+input_path = (
+    filedialog.askdirectory(
+        parent=root,
+        initialdir=f"{environ['APPDATA']}\\.minecraft\\journeymap\\data\\mp\\",
+        title="맵 타일이 포함된 폴더를 선택하세요.",
+    )
+    + "/"
 )
 print("input path set: {}\n".format(input_path))
+level = input_path.split("/")[-4]
+print("level set: {}\n".format(level))
 
 filelist = [f for f in listdir(input_path) if isfile(join(input_path, f))]
 print("filelist created: {}\n".format(filelist))
@@ -95,6 +107,6 @@ for i in range(len(setX)):
             )
             print("pasted {},{}.png".format(x, y))
 
-print(f"saving {datetime.datetime.now().strftime('%Y-%m-%d')}.png")
-bigimg.save(f"{datetime.datetime.now().strftime('%Y-%m-%d')}.png")
-print(f"saved {datetime.datetime.now().strftime('%Y-%m-%d')}.png")
+print(f"saving {level}_{datetime.datetime.now().strftime('%Y%m%d')[2:]}.png")
+bigimg.save(f"{level}_{datetime.datetime.now().strftime('%Y%m%d')[2:]}.png")
+print(f"saved {level}_{datetime.datetime.now().strftime('%Y%m%d')[2:]}.png")
