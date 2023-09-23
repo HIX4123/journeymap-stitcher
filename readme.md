@@ -1,17 +1,35 @@
-# journeymap-sticher
+#  journeymap-sticher
 
-Takes a bunch of files with coordinates delimited by commas, and creates one big image.
+쉼표로 구분된 좌표가 있는 여러 파일을 가져와 하나의 큰 이미지를 만듭니다.
 
-ex, a bunch of files such as -4,3.png and -4,4.png
+예: -4,3.png 및 -4,4.png와 같은 여러 파일들.
 
-They don't need to be attached to one another, the program will make the smallest image possible that contains all of the tiles.
+이 파일들은 서로 첨부할 필요가 없으며, 프로그램은 모든 타일을 포함하는 가능한 가장 작은 이미지를 만듭니다.
 
-Not a perfect solution, but workable. I think that some problems may occur if your coordinates are all negative, or don't cross the origin (probably both).
+완벽한 해결책은 아니지만 실행 가능한 방법입니다. 좌표가 모두 음수이거나 원점을 교차하지 않는 경우 (아마도 둘 다) 몇 가지 문제가 발생할 수 있다고 생각합니다.
 
-Requires the `pillow` library to be installed via pip:
+pip를 통해 `pillow` 라이브러리를 설치해야 합니다:
 
 ```pip install pillow```
 
-It creates a single .png file called output.png
+날짜.png라는 단일 png 파일을 생성합니다.
 
-I use this program to convert my journeymap maps into a proper big map I can print out (since some maps are just HUGE)
+저는 이 프로그램을 사용하여 여정맵 지도를 인쇄할 수 있는 적절한 큰 지도로 변환합니다(일부 지도는 너무 크기 때문에).
+
+
+# readme-by-forker
+
+jrddunbr의 동일한 리포지토리를 포크해 이하의 내용을 수정했습니다.
+
+- input 파일 탐색 UI 추가
+- 멀리 떨어진 청크 간에 생기는 검은 공간 축소 (상대적인 거리는 그대로 유지되게 했습니다.)
+- 맵 제작 알고리즘 수정
+
+journeymap 자체의 맵 저장 기능은 맵이 커질수록 시간이 오래 걸리거나 작동하지 않기 때문에, 이때 이 프로그램을 사용해 주면 됩니다.
+
+## 사용법
+아래 요구 사항을 만족하신 후, ```release.py```를 실행해 주시면 됩니다.
+
+## 요구 사항
+- Python3
+- pillow 라이브러리
